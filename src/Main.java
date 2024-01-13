@@ -63,12 +63,42 @@ public class Main extends Application {
 
         background.setImage(bg);
         root.getChildren().add(background);
+        Image zomb = new Image("file:PVZ_Zombie.png");
 
-        Button row1Button = new Button("\u200E \u200E \u200E \u200E ");
-        Button row2Button = new Button("\u200E \u200E \u200E \u200E ");
-        Button row3Button = new Button("\u200E \u200E \u200E \u200E ");
-        Button row4Button = new Button("\u200E \u200E \u200E \u200E ");
-        Button row5Button = new Button("\u200E \u200E \u200E \u200E ");
+
+        ImageView zobie1 = new ImageView(zomb);
+        zobie1.setFitHeight(50);
+        zobie1.setFitWidth(50);
+
+        ImageView zobie2 = new ImageView(zomb);
+        zobie2.setFitHeight(50);
+        zobie2.setFitWidth(50);
+
+        ImageView zobie3 = new ImageView(zomb);
+        zobie3.setFitHeight(50);
+        zobie3.setFitWidth(50);
+
+        ImageView zobie4 = new ImageView(zomb);
+        zobie4.setFitHeight(50);
+        zobie4.setFitWidth(50);
+
+        ImageView zobie5 = new ImageView(zomb);
+        zobie5.setFitHeight(50);
+        zobie5.setFitWidth(50);
+
+
+
+        Button row1Button = new Button();
+        Button row2Button = new Button();
+        Button row3Button = new Button();
+        Button row4Button = new Button();
+        Button row5Button = new Button();
+
+        row1Button.setGraphic(zobie1);
+        row2Button.setGraphic(zobie2);
+        row3Button.setGraphic(zobie3);
+        row4Button.setGraphic(zobie4);
+        row5Button.setGraphic(zobie5);
 
         double X = bg.getWidth()-bg.getWidth()/10;
         row1Button.setLayoutX(X);

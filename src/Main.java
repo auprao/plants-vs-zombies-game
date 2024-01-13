@@ -34,7 +34,7 @@ public class Main extends Application {
     static List<GameObject> gameObjects = new LinkedList<>();
     static List<Zombie> zombies = new LinkedList<>();
 
-    static Plant[][] plants = new Plant[5][9];
+    static Plant.Type[][] plants = new Plant[5][9];
     static final int[] CELL_X = {312, 400, 480, 575, 660, 745, 830, 910, 1000};
 
     public static void main(String[] args) {
@@ -184,7 +184,7 @@ public class Main extends Application {
     private void plantPlants(int level) {
         switch (level){
             case 0:
-                plants = new Plant[][] {
+                plants = new Plant.Type[][] {
                         {null,null,null,null,null,null,null,null,null},
                         {null,null,null,null,null,null,null,null,null},
                         {null,null,null,null,null,null,null,null,null},
@@ -193,30 +193,30 @@ public class Main extends Application {
                 };
                 break;
             case 1:
-                plants = new Plant[][] {
-                        {null,null,null,null,null,null,null,null,null},
-                        {null,null,null,null,null,null,null,null,null},
-                        {null,null,null,null,null,null,null,null,null},
-                        {null,null,null,null,null,null,null,null,null},
-                        {null,null,null,null,null,null,null,null,null}
+                plants = new Plant.Type[][] {
+                        {Plant.Type.Flower,Plant.Type.Shooter,null,null,null,null,null,null,null},
+                        {Plant.Type.iceShooter,Plant.Type.Flower,null,null,null,null,null,null,null},
+                        {null,Plant.Type.Shooter,null,null,null,null,null,null,null},
+                        {Plant.Type.Flower,null,null,null,null,null,null,null,null},
+                        {null,Plant.Type.Shooter,null,null,null,null,null,null,null}
                 };
                 break;
             case 2:
-                plants = new Plant[][] {
-                        {null,null,null,null,null,null,null,null,null},
-                        {null,null,null,null,null,null,null,null,null},
-                        {null,null,null,null,null,null,null,null,null},
-                        {null,null,null,null,null,null,null,null,null},
-                        {null,null,null,null,null,null,null,null,null}
+                plants = new Plant.Type[][] {
+                        {Plant.Type.Flower,null,Plant.Type.doubleShooter,null,null,Plant.Type.Walnut,null,null,null},
+                        {Plant.Type.Flower,Plant.Type.Shooter,Plant.Type.Mine,null,null,Plant.Type.Walnut,null,null,null},
+                        {Plant.Type.Flower,null,Plant.Type.doubleShooter,null,null,Plant.Type.Walnut,null,null,null},
+                        {Plant.Type.Flower,Plant.Type.Shooter,Plant.Type.Mine,null,null,Plant.Type.Walnut,null,null,null},
+                        {Plant.Type.Flower,null,Plant.Type.doubleShooter,null,null,Plant.Type.Walnut,null,null,null}
                 };
                 break;
             case 3:
-                plants = new Plant[][] {
-                        {null,null,null,null,null,null,null,null,null},
-                        {null,null,null,null,null,null,null,null,null},
-                        {null,null,null,null,null,null,null,null,null},
-                        {null,null,null,null,null,null,null,null,null},
-                        {null,null,null,null,null,null,null,null,null}
+                plants = new Plant.Type[][] {
+                        {Plant.Type.Flower,Plant.Type.doubleShooter,Plant.Type.iceShooter,Plant.Type.Shooter,Plant.Type.Mine,Plant.Type.Walnut,Plant.Type.Mine,Plant.Type.Walnut,null},
+                        {Plant.Type.Flower,Plant.Type.doubleShooter,Plant.Type.iceShooter,Plant.Type.Shooter,Plant.Type.Mine,Plant.Type.Walnut,Plant.Type.Mine,Plant.Type.Walnut,null},
+                        {Plant.Type.Flower,Plant.Type.doubleShooter,Plant.Type.iceShooter,Plant.Type.Shooter,Plant.Type.Mine,Plant.Type.Walnut,Plant.Type.Mine,Plant.Type.Walnut,null},
+                        {Plant.Type.Flower,Plant.Type.doubleShooter,Plant.Type.iceShooter,Plant.Type.Shooter,Plant.Type.Mine,Plant.Type.Walnut,Plant.Type.Mine,Plant.Type.Walnut,null},
+                        {Plant.Type.Flower,Plant.Type.doubleShooter,Plant.Type.iceShooter,Plant.Type.Shooter,Plant.Type.Mine,Plant.Type.Walnut,Plant.Type.Mine,Plant.Type.Walnut,null}
                 };
                 break;
         }

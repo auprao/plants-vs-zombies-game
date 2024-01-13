@@ -31,6 +31,7 @@ public class Main extends Application {
     static List<Zombie> zombies = new LinkedList<>();
 
     static Plant[][] plants = new Plant[5][9];
+    static final int[] CELL_X = {312, 400, 480, 575, 660, 745, 830, 910, 1000};
     public static void main(String[] args) {
         launch(args);
     }

@@ -36,6 +36,12 @@ public class Main extends Application {
         root.getChildren().add(z.img);
     }
 
+    public static void addZombieOnTrack(int track) {
+        Zombie z = new Zombie(1000, 0);
+        addZombie(z);
+        z.assignToTrack(track);
+    }
+
     @Override
     public void start(Stage primaryStage) {
         Image bg = new Image("file:Frontyard.png");
@@ -50,14 +56,10 @@ public class Main extends Application {
         background.setImage(bg);
         root.getChildren().add(background);
 
-        Zombie z = new Zombie(500, 300);
-
-        addZombie(z);
-
-        root.setOnMouseMoved(new EventHandler<MouseEvent>() {
+        root.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                z.assignToTrack((int) (Math.random() * 5));
+                addZombieOnTrack((int)(Math.random() * 5));
             }
         });
 

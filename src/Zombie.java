@@ -6,7 +6,7 @@ import java.awt.*;
 public class Zombie extends GameObject {
 
     static double walkSpeed = 1;
-    static ImageView img = new ImageView(new Image("file:Archive/zombie.png"));
+    public ImageView img = new ImageView(new Image("file:Archive/zombie.png"));
     public Zombie(double x, double y) {
         super(x, y);
     }

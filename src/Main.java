@@ -22,12 +22,20 @@ public class Main extends Application {
         launch(args);
     }
 
+    public static void addGameObject(GameObject obj) {
+        gameObjects.add(obj);
+        root.getChildren().add(obj.img);
+    }
+
     @Override
     public void start(Stage primaryStage) {
+        addGameObject(new Zombie(100, 100));
         Timeline timeline = new Timeline();
         timeline.setCycleCount(-1);
         timeline.getKeyFrames().add(new KeyFrame(Duration.millis((double) 1000/FPS), e -> {
-            // Run every frame :3'
+            for (GameObject obj: gameObjects) {
+                obj.update();
+            }
         }));
         timeline.play();
         primaryStage.setScene(scene);

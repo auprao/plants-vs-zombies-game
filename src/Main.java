@@ -6,8 +6,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Main extends Application {
     static final int FPS = 60;
+    static List<GameObject> gameObjects = new LinkedList<>();
     public static void main(String[] args) {
         launch(args);
     }

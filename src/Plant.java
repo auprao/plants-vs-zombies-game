@@ -45,13 +45,8 @@ public class Plant {
 
     public void peaShoot(){
         Pea pea = new Pea(this.x,this.y);
-        Main.root.getChildren().add(pea);
-        for (int i = 0; i < 300; i++) {
-            pea.x = pea.x + 3;
-            if (){
-
-            }
-        }
+        Main.root.getChildren().add(pea.img);
+        Main.gameObjects.add(pea);
     }
 
     public void icePeaShoot(){

@@ -3,7 +3,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 public class Plant {
-    enum Type{
+    public enum Type{
         Shooter,iceShooter,doubleShooter,
         Flower,Walnut,Mine
     }

@@ -6,6 +6,8 @@ public class Pea extends GameObject {
     public ImageView img = new ImageView(new Image("file:pea.png"));
     public Pea(double x, double y) {
         super(x, y);
+        img.setScaleX(0.25);
+        img.setScaleY(0.25);
     }
 
     public void update() {

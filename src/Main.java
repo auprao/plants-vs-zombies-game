@@ -1,6 +1,8 @@
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -25,7 +27,9 @@ public class Main extends Application {
 
     static final Duration BUTTON_COOLDOWN = Duration.millis(2000);
     static AnchorPane root = new AnchorPane();
+    static AnchorPane levelselectRoot = new AnchorPane();
     static Scene scene = new Scene(root);
+    static Scene levelSelect = new Scene(root);
     static final int FPS = 60;
     public static int COUNT = 0;
 
@@ -62,7 +66,18 @@ public class Main extends Application {
         mediaPlayer.setAutoPlay(true);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 
-        plantPlants(1);
+
+
+        Button level1 = new Button("Level 1");
+        level1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(scene);
+                plantPlants(1);
+            }
+        });
+
+        levelselectRoot.getChildren().add()
 
         background.setImage(bg);
         root.getChildren().add(background);
@@ -177,18 +192,18 @@ public class Main extends Application {
             }
         }));
         timeline.play();
-        primaryStage.setScene(scene);
+        primaryStage.setScene(levelSelect);
         primaryStage.show();
     }
 
     private void plantPlants(int level) {
         switch (level){
-            case 1:
-                plants = {  {null,Plant.Type.Flower},
-                        {},
-                        {}
-                }
-                break;
+//            case 1:
+//                plants = {  {null,Plant.Type.Flower},
+//                        {},
+//                        {}
+//                }
+//                break;
         }
 
     }

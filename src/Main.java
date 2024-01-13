@@ -37,8 +37,6 @@ public class Main extends Application {
             // Run every frame :3'
         }));
         timeline.play();
-
-
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();

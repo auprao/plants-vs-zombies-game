@@ -52,16 +52,22 @@ public class Main extends Application {
 
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 
+        root.setOnMouseMoved(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                System.out.println(event.getY());
+            }
+        });
 
         background.setImage(bg);
         root.getChildren().add(background);
 
-        root.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                addZombieOnTrack((int)(Math.random() * 5));
-            }
-        });
+        addZombieOnTrack(0);
+        addZombieOnTrack(1);
+        addZombieOnTrack(2);
+        addZombieOnTrack(3);
+        addZombieOnTrack(4);
+
 
         Timeline timeline = new Timeline();
         timeline.setCycleCount(-1);

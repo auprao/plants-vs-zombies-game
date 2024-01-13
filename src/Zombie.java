@@ -16,19 +16,19 @@ public class Zombie extends GameObject {
     public void assignToTrack(int track) {
         switch (track) {
             case 0:
-                this.y = 90;
+                this.y = 135;
                 break;
             case 1:
-                this.y = 160;
+                this.y = 245;
                 break;
             case 2:
-                this.y = 235;
+                this.y = 345;
                 break;
             case 3:
-                this.y = 300;
+                this.y = 450;
                 break;
             case 4:
-                this.y = 370;
+                this.y = 560;
                 break;
         }
     }
@@ -36,6 +36,6 @@ public class Zombie extends GameObject {
     public void update() {
         this.x -= walkSpeed;
         this.img.setX(x - 0.5 * img.getImage().getWidth() * 0.4);
-        this.img.setY(y - img.getImage().getHeight() * 0.4);
+        this.img.setY(y - img.getImage().getHeight() * 0.4 * 1.5);
     }
 }

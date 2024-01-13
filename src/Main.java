@@ -210,7 +210,7 @@ public class Main extends Application {
                         {Plant.Type.Flower,Plant.Type.Shooter,null,null,null,null,null,null,null},
                         {Plant.Type.iceShooter,Plant.Type.Flower,null,null,null,null,null,null,null},
                         {null,Plant.Type.Shooter,null,null,null,null,null,null,null},
-                        {Plant.Type.Flower,null,null,null,null,null,null,null,null},
+                        {Plant.Type.Flower,null,Plant.Type.Shooter,null,null,null,null,null,null},
                         {null,Plant.Type.Shooter,null,null,null,null,null,null,null}
                 };
                 break;

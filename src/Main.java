@@ -13,6 +13,9 @@ import java.time.chrono.JapaneseChronology;
 import java.time.chrono.JapaneseDate;
 
 public class Main extends Application {
+
+    static AnchorPane root = new AnchorPane();
+    static Scene scene = new Scene(root);
     static final int FPS = 60;
     static List<GameObject> gameObjects = new LinkedList<>();
     public static void main(String[] args) {
@@ -27,9 +30,6 @@ public class Main extends Application {
             // Run every frame :3'
         }));
         timeline.play();
-
-        AnchorPane root = new AnchorPane();
-        Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

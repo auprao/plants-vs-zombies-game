@@ -46,7 +46,7 @@ public class Plant {
             Zombie z = Main.zombies.get(i);
             int distance = (int) Math.sqrt(Math.pow(Math.abs(z.x - this.x),2)+Math.pow(Math.abs(z.y - this.y),2));
             if (distance < 20){
-                z.setHP(z.getHP() - (1/distance));
+                z.setHP(z.getHP() - (1/(distance+1))*100);
             }
         }
     }

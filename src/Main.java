@@ -44,8 +44,8 @@ public class Main extends Application {
 
     public static void addZombieOnTrack(int track) {
         Zombie z = new Zombie(1000, 0);
-        addZombie(z);
         z.assignToTrack(track);
+        addZombie(z);
     }
 
     @Override
@@ -103,11 +103,11 @@ public class Main extends Application {
         row4Button.setLayoutX(X);
         row5Button.setLayoutX(X);
 
-        row1Button.setLayoutY(135);
-        row2Button.setLayoutY(245);
-        row3Button.setLayoutY(345);
-        row4Button.setLayoutY(450);
-        row5Button.setLayoutY(560);
+        row1Button.setLayoutY(110);
+        row2Button.setLayoutY(215);
+        row3Button.setLayoutY(325);
+        row4Button.setLayoutY(440);
+        row5Button.setLayoutY(550);
 
         root.getChildren().addAll(row1Button, row2Button, row3Button,row4Button, row5Button);
 

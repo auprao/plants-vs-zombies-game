@@ -14,9 +14,6 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
-import java.time.chrono.JapaneseChronology;
-import java.time.chrono.JapaneseDate;
-
 public class Main extends Application {
     static final int FPS = 60;
 
@@ -35,6 +32,8 @@ public class Main extends Application {
         Media bgMusic = new Media(new File(path).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(bgMusic);
         mediaPlayer.setAutoPlay(true);
+
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 
 
         background.setImage(bg);

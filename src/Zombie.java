@@ -67,22 +67,23 @@ public class Zombie extends GameObject {
     }
 
     public void update() {
-        if (Math.random() < 0.4) {frame++;}
+        if (Math.random() < 0.4 || true) {frame++;}
 
         if (this.animState == AnimStates.walk) {
             if (frame >= WALK_FRAMES.length) frame = 0;
             this.img.setImage(WALK_FRAMES[frame]);
         }
-        if (this.animState == AnimStates.die) {
-            if (frame >= DIE_FRAMES.length) {
-                die();
-                frame--;
-            }
-            this.img.setImage(DIE_FRAMES[frame]);
-        }
+//        System.out.println(frame);
+//        if (this.animState == AnimStates.die) {
+//            if (frame == 8) {
+//                die();
+//                frame--;
+//            }
+//            this.img.setImage(DIE_FRAMES[frame]);
+//        }
 
-        if (this.hp <= 0 || this.x < 850) {
-            startDying();
+        if (this.hp <= 0) {
+            die();
         }
 
         if (animState == AnimStates.walk) {
@@ -91,7 +92,7 @@ public class Zombie extends GameObject {
         this.img.setX(x - 0.5 * img.getImage().getWidth() * 0.4);
         this.img.setY(y - img.getImage().getHeight() * 0.4 * 1.5);
 
-        if (this.x <= 50){
+        if (this.x <= 5){
             Main.COUNT++;
         }
     }
@@ -110,7 +111,7 @@ public class Zombie extends GameObject {
     }
     public void die() {
         this.animState = AnimStates.stopped;
-        //Main.gameObjects.remove(this);
-        //Main.zombies.remove(this);
+        Main.gameObjects.remove(this);
+        Main.zombies.remove(this);
     }
 }

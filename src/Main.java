@@ -23,6 +23,7 @@ import java.util.Optional;
 
 public class Main extends Application {
 
+    static final Duration BUTTON_COOLDOWN = Duration.millis(2000);
     static AnchorPane root = new AnchorPane();
     static Scene scene = new Scene(root);
     static final int FPS = 60;
@@ -97,6 +98,16 @@ public class Main extends Application {
         Button row4Button = new Button();
         Button row5Button = new Button();
 
+        Timeline tl1 = new Timeline(new KeyFrame(BUTTON_COOLDOWN,  e -> {row1Button.setVisible(true);}));
+        tl1.setCycleCount(1);
+        Timeline tl2 = new Timeline(new KeyFrame(BUTTON_COOLDOWN,  e -> {row2Button.setVisible(true);}));
+        tl1.setCycleCount(1);
+        Timeline tl3 = new Timeline(new KeyFrame(BUTTON_COOLDOWN,  e -> {row3Button.setVisible(true);}));
+        tl1.setCycleCount(1);
+        Timeline tl4 = new Timeline(new KeyFrame(BUTTON_COOLDOWN,  e -> {row4Button.setVisible(true);}));
+        tl1.setCycleCount(1);
+        Timeline tl5 = new Timeline(new KeyFrame(BUTTON_COOLDOWN,  e -> {row5Button.setVisible(true);}));
+        tl1.setCycleCount(1);
         row1Button.setGraphic(zobie1);
         row2Button.setGraphic(zobie2);
         row3Button.setGraphic(zobie3);
@@ -120,18 +131,28 @@ public class Main extends Application {
 
         row1Button.setOnAction(event -> {
             addZombieOnTrack(0);
+            row1Button.setVisible(false);
+            tl1.playFromStart();
         });
         row2Button.setOnAction(event -> {
             addZombieOnTrack(1);
+            row2Button.setVisible(false);
+            tl2.playFromStart();
         });
         row3Button.setOnAction(event -> {
             addZombieOnTrack(2);
+            row3Button.setVisible(false);
+            tl3.playFromStart();
         });
         row4Button.setOnAction(event -> {
             addZombieOnTrack(3);
+            row4Button.setVisible(false);
+            tl4.playFromStart();
         });
         row5Button.setOnAction(event -> {
             addZombieOnTrack(4);
+            row5Button.setVisible(false);
+            tl5.playFromStart();
         });
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

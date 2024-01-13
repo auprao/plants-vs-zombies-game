@@ -3,7 +3,9 @@ import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.media.Media;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,7 +18,7 @@ import javafx.util.Duration;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
-
+import java.util.Optional;
 
 
 public class Main extends Application {
@@ -24,6 +26,7 @@ public class Main extends Application {
     static AnchorPane root = new AnchorPane();
     static Scene scene = new Scene(root);
     static final int FPS = 60;
+    public static int COUNT = 0;
 
     static ImageView background = new ImageView();
 
@@ -127,11 +130,25 @@ public class Main extends Application {
             addZombieOnTrack(4);
         });
 
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("YOU WON");
+        alert.setHeaderText("YOU ATED THE BRAIN");
+        alert.setContentText("\uD83E\uDD24");
+        alert.setOnCloseRequest(event -> {
+            alert.close();
+            primaryStage.close();
+                });
+
         Timeline timeline = new Timeline();
         timeline.setCycleCount(-1);
         timeline.getKeyFrames().add(new KeyFrame(Duration.millis((double) 1000/FPS), e -> {
             for (GameObject obj: gameObjects) {
                 obj.update();
+                if (COUNT>= 5){
+                    alert.show();
+                    timeline.stop();
+
+                }
 
             }
         }));

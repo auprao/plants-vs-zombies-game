@@ -69,6 +69,10 @@ public class Zombie extends GameObject {
         this.x -= walkSpeed;
         this.img.setX(x - 0.5 * img.getImage().getWidth() * 0.4);
         this.img.setY(y - img.getImage().getHeight() * 0.4 * 1.5);
+
+        if (this.x <= 50){
+            Main.COUNT++;
+        }
     }
 
     public int getHP() {

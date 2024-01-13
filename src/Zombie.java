@@ -7,6 +7,7 @@ public class Zombie extends GameObject {
 
     static double walkSpeed = 1;
     public ImageView img = new ImageView(new Image("file:Archive/zombie.png"));
+    public int hp = 100;
     public Zombie(double x, double y) {
         super(x, y);
         img.setScaleX(0.4);
@@ -37,5 +38,13 @@ public class Zombie extends GameObject {
         this.x -= walkSpeed;
         this.img.setX(x - 0.5 * img.getImage().getWidth() * 0.4);
         this.img.setY(y - img.getImage().getHeight() * 0.4 * 1.5);
+    }
+
+    public int getHP() {
+        return hp;
+    }
+
+    public void setHP(int hp) {
+        this.hp = hp;
     }
 }

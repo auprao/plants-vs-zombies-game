@@ -23,13 +23,15 @@ public class Main extends Application {
     static ImageView background = new ImageView();
 
     static List<GameObject> gameObjects = new LinkedList<>();
+    static List<Zombie> zombies = new LinkedList<>();
     public static void main(String[] args) {
         launch(args);
     }
 
-    public static void addGameObject(GameObject obj) {
-        gameObjects.add(obj);
-        root.getChildren().add(obj.img);
+    public static void addZombie(Zombie z) {
+        gameObjects.add(z);
+        zombies.add(z);
+        root.getChildren().add(z.img);
     }
 
     @Override
@@ -40,8 +42,7 @@ public class Main extends Application {
 
         Zombie z = new Zombie(100, 370);
 
-        gameObjects.add(z);
-        root.getChildren().add(z.img);
+        addZombie(z);
 
         Timeline timeline = new Timeline();
         timeline.setCycleCount(-1);

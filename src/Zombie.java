@@ -9,6 +9,8 @@ public class Zombie extends GameObject {
     public ImageView img = new ImageView(new Image("file:Archive/zombie.png"));
     public Zombie(double x, double y) {
         super(x, y);
+        img.setScaleX(0.4);
+        img.setScaleY(0.4);
     }
 
     public void assignToTrack(int track) {
@@ -33,5 +35,7 @@ public class Zombie extends GameObject {
 
     public void update() {
         this.x -= walkSpeed;
+        this.img.setX(x);
+        this.img.setY(y - 0.5 * img.getImage().getHeight());
     }
 }

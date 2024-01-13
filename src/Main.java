@@ -37,7 +37,12 @@ public class Main extends Application {
         Image bg = new Image("file:Frontyard.png");
         background.setImage(bg);
         root.getChildren().add(background);
-        addGameObject(new Zombie(100, 100));
+
+        Zombie z = new Zombie(100, 370);
+
+        gameObjects.add(z);
+        root.getChildren().add(z.img);
+
         Timeline timeline = new Timeline();
         timeline.setCycleCount(-1);
         timeline.getKeyFrames().add(new KeyFrame(Duration.millis((double) 1000/FPS), e -> {

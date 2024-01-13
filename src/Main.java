@@ -28,6 +28,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         AnchorPane root = new AnchorPane();
         Image bg = new Image("file:Frontyard.png");
+
         background.setImage(bg);
         root.getChildren().add(background);
 

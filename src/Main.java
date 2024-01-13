@@ -2,6 +2,8 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -17,6 +19,9 @@ public class Main extends Application {
     static AnchorPane root = new AnchorPane();
     static Scene scene = new Scene(root);
     static final int FPS = 60;
+
+    static ImageView background = new ImageView();
+
     static List<GameObject> gameObjects = new LinkedList<>();
     public static void main(String[] args) {
         launch(args);
@@ -29,6 +34,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        Image bg = new Image("file:Frontyard.png");
+        background.setImage(bg);
+        root.getChildren().add(background);
         addGameObject(new Zombie(100, 100));
         Timeline timeline = new Timeline();
         timeline.setCycleCount(-1);

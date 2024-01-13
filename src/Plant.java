@@ -44,14 +44,14 @@ public class Plant {
     }
 
     public void peaShoot(){
-        GameObject pea = new GameObject(this.x,this.y);
-    /*    Main.root.getChildren().add(pea);
+        Pea pea = new Pea(this.x,this.y);
+        Main.root.getChildren().add(pea);
         for (int i = 0; i < 300; i++) {
             pea.x = pea.x + 3;
             if (){
 
             }
-        }*/
+        }
     }
 
     public void icePeaShoot(){

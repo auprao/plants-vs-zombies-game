@@ -28,8 +28,8 @@ public class Main extends Application {
     static final Duration BUTTON_COOLDOWN = Duration.millis(2000);
     static AnchorPane root = new AnchorPane();
     static AnchorPane levelselectRoot = new AnchorPane();
-    static Scene scene = new Scene(root);
-    static Scene levelSelect = new Scene(root);
+    static Scene scene = new Scene(root, 1500, 644);
+    static Scene levelSelect = new Scene(levelselectRoot, 1500, 644);
     static final int FPS = 60;
     public static int COUNT = 0;
 
@@ -77,7 +77,7 @@ public class Main extends Application {
             }
         });
 
-        levelselectRoot.getChildren().add()
+        levelselectRoot.getChildren().add(level1);
 
         background.setImage(bg);
         root.getChildren().add(background);

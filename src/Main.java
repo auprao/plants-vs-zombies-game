@@ -17,7 +17,7 @@ public class Main extends Application {
         Timeline timeline = new Timeline();
         timeline.setCycleCount(-1);
         timeline.getKeyFrames().add(new KeyFrame(Duration.millis((double) 1000/FPS), e -> {
-            // Run every frame
+            // Run every frame :3
         }));
         timeline.play();
 

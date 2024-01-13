@@ -239,9 +239,10 @@ public class Main extends Application {
     public void growPlants(Plant.Type[][] plants){
         int newX = 0;
         int newY = 0;
-        for (int c = 0; c < 5; c++) {
-            for (int r = 0; r < 9; r++) {
-                switch (c) {
+        for (int y = 0; y < 5; y++) {
+            for (int x = 0; x < 9; x++) {
+                if (plants[y][x] == null) continue;
+                switch (y) {
                     case 0:
                         newY = 135;
                         break;
@@ -258,8 +259,8 @@ public class Main extends Application {
                         newY = 560;
                         break;
                 }
-                newX = CELL_X[r];
-                Plant p = new Plant(plants[r][c],newX,newY);
+                newX = CELL_X[x];
+                Plant p = new Plant(plants[y][x],newX,newY);
                 root.getChildren().add(p.img);
             }
         }

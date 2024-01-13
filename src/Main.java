@@ -29,6 +29,9 @@ public class Main extends Application {
 
     static List<GameObject> gameObjects = new LinkedList<>();
     static List<Zombie> zombies = new LinkedList<>();
+
+    static Plant[][] plants = new Plant[5][9];
+    static final int[] CELL_X = {312, 400, 480, 575, 660, 745, 830, 910, 1000};
     public static void main(String[] args) {
         launch(args);
     }
@@ -53,13 +56,6 @@ public class Main extends Application {
         MediaPlayer mediaPlayer = new MediaPlayer(bgMusic);
         mediaPlayer.setAutoPlay(true);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-
-        root.setOnMouseMoved(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                System.out.println(event.getY());
-            }
-        });
 
         background.setImage(bg);
         root.getChildren().add(background);
@@ -107,16 +103,29 @@ public class Main extends Application {
         row4Button.setLayoutX(X);
         row5Button.setLayoutX(X);
 
-        row1Button.setLayoutY(120);
-        row2Button.setLayoutY(220);
-        row3Button.setLayoutY(330);
-        row4Button.setLayoutY(440);
-        row5Button.setLayoutY(550);
-
+        row1Button.setLayoutY(135);
+        row2Button.setLayoutY(245);
+        row3Button.setLayoutY(345);
+        row4Button.setLayoutY(450);
+        row5Button.setLayoutY(560);
 
         root.getChildren().addAll(row1Button, row2Button, row3Button,row4Button, row5Button);
 
-
+        row1Button.setOnAction(event -> {
+            addZombieOnTrack(0);
+        });
+        row2Button.setOnAction(event -> {
+            addZombieOnTrack(1);
+        });
+        row3Button.setOnAction(event -> {
+            addZombieOnTrack(2);
+        });
+        row4Button.setOnAction(event -> {
+            addZombieOnTrack(3);
+        });
+        row5Button.setOnAction(event -> {
+            addZombieOnTrack(4);
+        });
 
         Timeline timeline = new Timeline();
         timeline.setCycleCount(-1);

@@ -66,8 +66,6 @@ public class Main extends Application {
         mediaPlayer.setAutoPlay(true);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 
-
-
         Button level1 = new Button("Level 1");
         level1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -234,6 +232,37 @@ public class Main extends Application {
                         {Plant.Type.Flower,Plant.Type.doubleShooter,Plant.Type.iceShooter,Plant.Type.Shooter,Plant.Type.Mine,Plant.Type.Walnut,Plant.Type.Mine,Plant.Type.Walnut,null}
                 };
                 break;
+        }
+        growPlants(plants);
+    }
+
+    public void growPlants(Plant.Type[][] plants){
+        int newX = 0;
+        int newY = 0;
+        for (int y = 0; y < 5; y++) {
+            for (int x = 0; x < 9; x++) {
+                if (plants[y][x] == null) continue;
+                switch (y) {
+                    case 0:
+                        newY = 135;
+                        break;
+                    case 1:
+                        newY = 245;
+                        break;
+                    case 2:
+                        newY = 345;
+                        break;
+                    case 3:
+                        newY = 450;
+                        break;
+                    case 4:
+                        newY = 560;
+                        break;
+                }
+                newX = CELL_X[x];
+                Plant p = new Plant(plants[y][x],newX,newY);
+                root.getChildren().add(p.img);
+            }
         }
     }
 }

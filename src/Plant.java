@@ -1,6 +1,9 @@
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 
 public class Plant {
     public enum Type{
@@ -11,16 +14,22 @@ public class Plant {
     int x;
     int y;
     int hp = 100;
+    Timeline shoot = new Timeline(new KeyFrame(Duration.millis(2000), e -> {
+        peaShoot();
+    }));
     public ImageView img = new ImageView(new Image("file:sus flower.png"));
     public Plant(Type type, int x, int y) {
+        shoot.setCycleCount(-1);
         this.type = type;
         this.x = x;
         this.y = y;
         if (type == Type.Walnut){
             hp = 200;
         }
-        img.setFitWidth(200);
-        img.setFitHeight(200);
+        img.setFitWidth(80);
+        img.setFitHeight(80);
+        img.setX(x-40);
+        img.setY(y-80);
         switch (type){
             case Mine:
                 this.img.setImage(new Image("file:mime.png"));
@@ -33,6 +42,7 @@ public class Plant {
                 break;
             case Shooter:
                 this.img.setImage(new Image("file:pee shooter.png"));
+                shoot.play();
                 break;
             case doubleShooter:
                 this.img.setImage(new Image("file:gorg.png"));

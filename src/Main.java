@@ -198,12 +198,42 @@ public class Main extends Application {
 
     private void plantPlants(int level) {
         switch (level){
-//            case 1:
-//                plants = {  {null,Plant.Type.Flower},
-//                        {},
-//                        {}
-//                }
-//                break;
+            case 0:
+                plants = new Plant[][] {
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null}
+                };
+                break;
+            case 1:
+                plants = new Plant[][] {
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null}
+                };
+                break;
+            case 2:
+                plants = new Plant[][] {
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null}
+                };
+                break;
+            case 3:
+                plants = new Plant[][] {
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null},
+                        {null,null,null,null,null,null,null,null,null}
+                };
+                break;
         }
 
     }

@@ -1,8 +1,6 @@
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.awt.*;
-
 public class Zombie extends GameObject {
 
     static double walkSpeed = 1;

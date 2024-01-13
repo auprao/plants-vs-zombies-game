@@ -29,6 +29,8 @@ public class Main extends Application {
 
     static List<GameObject> gameObjects = new LinkedList<>();
     static List<Zombie> zombies = new LinkedList<>();
+
+    static Plant[][] plants = new Plant[5][9];
     public static void main(String[] args) {
         launch(args);
     }
@@ -53,13 +55,6 @@ public class Main extends Application {
         MediaPlayer mediaPlayer = new MediaPlayer(bgMusic);
         mediaPlayer.setAutoPlay(true);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-
-        root.setOnMouseMoved(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                System.out.println(event.getY());
-            }
-        });
 
         background.setImage(bg);
         root.getChildren().add(background);

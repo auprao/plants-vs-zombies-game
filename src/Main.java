@@ -36,7 +36,6 @@ public class Main extends Application {
 
     static Plant[][] plants = new Plant[5][9];
     static final int[] CELL_X = {312, 400, 480, 575, 660, 745, 830, 910, 1000};
-    private int level = 1;
 
     public static void main(String[] args) {
         launch(args);
@@ -63,7 +62,7 @@ public class Main extends Application {
         mediaPlayer.setAutoPlay(true);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 
-        plantPlants();
+        plantPlants(1);
 
         background.setImage(bg);
         root.getChildren().add(background);
@@ -182,12 +181,15 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    private void plantPlants() {
-        if (level == 1){
-            plants = {  {},
+    private void plantPlants(int level) {
+        switch (level){
+            case 1:
+                plants = {  {null,Plant.Type.Flower},
                         {},
                         {}
-            }
+                }
+                break;
         }
+
     }
 }

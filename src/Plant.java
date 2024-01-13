@@ -11,7 +11,7 @@ public class Plant {
     int x;
     int y;
     int hp = 100;
-    public ImageView img = new ImageView(new Image("");
+    public ImageView img = new ImageView(new Image("file:sus flower.png"));
     public Plant(Type type, int x, int y) {
         this.type = type;
         this.x = x;
@@ -29,7 +29,7 @@ public class Plant {
                 this.img.setImage(new Image("file:walnut.png"));
                 break;
             case Flower:
-                this.img.setImage(new Image("file:mime.png"));
+                this.img.setImage(new Image("file:sus flower.png"));
                 break;
             case Shooter:
                 this.img.setImage(new Image("file:pee shooter.png"));

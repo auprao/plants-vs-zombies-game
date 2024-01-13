@@ -47,13 +47,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        AnchorPane root = new AnchorPane();
         Image bg = new Image("file:Frontyard.png");
         String path = "Plants vs Zombies Soundtrack. [Main Menu].mp3";
         Media bgMusic = new Media(new File(path).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(bgMusic);
         mediaPlayer.setAutoPlay(true);
-
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 
         root.setOnMouseMoved(new EventHandler<MouseEvent>() {

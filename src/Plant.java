@@ -1,3 +1,5 @@
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 public class Plant {
@@ -9,13 +11,35 @@ public class Plant {
     int x;
     int y;
     int hp = 100;
-
+    public ImageView img = new ImageView(new Image("");
     public Plant(Type type, int x, int y) {
         this.type = type;
         this.x = x;
         this.y = y;
         if (type == Type.Walnut){
             hp = 200;
+        }
+        img.setFitWidth(200);
+        img.setFitHeight(200);
+        switch (type){
+            case Mine:
+                this.img.setImage(new Image("file:mime.png"));
+                break;
+            case Walnut:
+                this.img.setImage(new Image("file:walnut.png"));
+                break;
+            case Flower:
+                this.img.setImage(new Image("file:mime.png"));
+                break;
+            case Shooter:
+                this.img.setImage(new Image("file:pee shooter.png"));
+                break;
+            case doubleShooter:
+                this.img.setImage(new Image("file:gorg.png"));
+                break;
+            case iceShooter:
+                this.img.setImage(new Image("file:lodowy.png"));
+                break;
         }
     }
 

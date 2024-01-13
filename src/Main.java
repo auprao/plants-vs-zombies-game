@@ -1,9 +1,11 @@
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -40,15 +42,23 @@ public class Main extends Application {
         background.setImage(bg);
         root.getChildren().add(background);
 
-        Zombie z = new Zombie(100, 370);
+        Zombie z = new Zombie(500, 300);
 
         addZombie(z);
+
+        root.setOnMouseMoved(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                z.assignToTrack((int) (Math.random() * 5));
+            }
+        });
 
         Timeline timeline = new Timeline();
         timeline.setCycleCount(-1);
         timeline.getKeyFrames().add(new KeyFrame(Duration.millis((double) 1000/FPS), e -> {
             for (GameObject obj: gameObjects) {
                 obj.update();
+
             }
         }));
         timeline.play();

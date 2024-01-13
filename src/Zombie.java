@@ -3,6 +3,9 @@ import javafx.scene.image.ImageView;
 
 public class Zombie extends GameObject {
 
+    private enum Anim_State {
+        walk, attack, die
+    }
     static double walkSpeed = 1;
     public ImageView img = new ImageView(new Image("file:Archive/zombie.png"));
     public int hp = 100;

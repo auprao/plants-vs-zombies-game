@@ -74,8 +74,28 @@ public class Main extends Application {
                 plantPlants(1);
             }
         });
+        Button level2 = new Button("Level 2");
+        level2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(scene);
+                plantPlants(2);
+            }
+        });
+        Button level3 = new Button("Level 3");
+        level3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(scene);
+                plantPlants(3);
+            }
+        });
 
         levelselectRoot.getChildren().add(level1);
+        levelselectRoot.getChildren().add(level2);
+        level2.setLayoutX(200);
+        levelselectRoot.getChildren().add(level3);
+        level3.setLayoutX(400);
 
         background.setImage(bg);
         root.getChildren().add(background);
@@ -181,12 +201,11 @@ public class Main extends Application {
         timeline.getKeyFrames().add(new KeyFrame(Duration.millis((double) 1000/FPS), e -> {
             for (GameObject obj: gameObjects) {
                 obj.update();
-                if (COUNT>= 5){
-                    alert.show();
-                    timeline.stop();
 
                 }
-
+            if (COUNT>= 5){
+                alert.show();
+                timeline.stop();
             }
         }));
         timeline.play();

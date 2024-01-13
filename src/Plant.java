@@ -17,6 +17,10 @@ public class Plant {
     Timeline shoot = new Timeline(new KeyFrame(Duration.millis(2000), e -> {
         peaShoot();
     }));
+
+    Timeline fastshoot = new Timeline(new KeyFrame(Duration.millis(1000), e -> {
+        peaShoot();
+    }));
     public ImageView img = new ImageView(new Image("file:sus flower.png"));
     public Plant(Type type, int x, int y) {
         shoot.setCycleCount(-1);
@@ -46,6 +50,7 @@ public class Plant {
                 break;
             case doubleShooter:
                 this.img.setImage(new Image("file:gorg.png"));
+                fastshoot.play();
                 break;
             case iceShooter:
                 this.img.setImage(new Image("file:lodowy.png"));

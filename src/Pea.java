@@ -20,7 +20,7 @@ public class Pea extends GameObject {
             }
         }
         this.img.setX(this.x);
-        this.img.setY(this.y);
+        this.img.setY(this.y - 50);
     }
 
 }

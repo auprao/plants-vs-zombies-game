@@ -34,7 +34,7 @@ public class Main extends Application {
     static List<GameObject> gameObjects = new LinkedList<>();
     static List<Zombie> zombies = new LinkedList<>();
 
-    static Plant.Type[][] plants = new Plant[5][9];
+    static Plant.Type[][] plants = new Plant.Type[5][9];
     static final int[] CELL_X = {312, 400, 480, 575, 660, 745, 830, 910, 1000};
 
     public static void main(String[] args) {
@@ -220,6 +220,5 @@ public class Main extends Application {
                 };
                 break;
         }
-
     }
 }

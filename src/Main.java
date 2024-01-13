@@ -44,8 +44,8 @@ public class Main extends Application {
 
     public static void addZombieOnTrack(int track) {
         Zombie z = new Zombie(1000, 0);
-        addZombie(z);
         z.assignToTrack(track);
+        addZombie(z);
     }
 
     @Override

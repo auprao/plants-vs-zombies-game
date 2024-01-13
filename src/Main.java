@@ -52,7 +52,6 @@ public class Main extends Application {
         Media bgMusic = new Media(new File(path).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(bgMusic);
         mediaPlayer.setAutoPlay(true);
-
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 
         root.setOnMouseMoved(new EventHandler<MouseEvent>() {

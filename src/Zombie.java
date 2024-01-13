@@ -15,10 +15,21 @@ public class Zombie extends GameObject {
             new Image("file:Archive/walk/go_9.png"),
             new Image("file:Archive/walk/go_10.png")
     };
+
+    static final Image[] DIE_FRAMES = {
+            new Image("file:Archive/die/die_1.png"),
+            new Image("file:Archive/die/die_2.png"),
+            new Image("file:Archive/die/die_3.png"),
+            new Image("file:Archive/die/die_4.png"),
+            new Image("file:Archive/die/die_5.png"),
+            new Image("file:Archive/die/die_6.png"),
+            new Image("file:Archive/die/die_7.png"),
+            new Image("file:Archive/die/die_8.png"),
+    };
     private int track = 0;
 
     private enum AnimStates {
-        walk, attack, die
+        walk, attack, die, stopped
     }
 
     private AnimStates animState = AnimStates.walk;
@@ -26,6 +37,7 @@ public class Zombie extends GameObject {
     public ImageView img = new ImageView(new Image("file:Archive/zombie.png"));
     public int hp = 100;
     public int frame = 0;
+
 
     public Zombie(double x, double y) {
         super(x, y);
@@ -61,12 +73,21 @@ public class Zombie extends GameObject {
             if (frame >= WALK_FRAMES.length) frame = 0;
             this.img.setImage(WALK_FRAMES[frame]);
         }
-
-        if (this.hp <= 0) {
-            die();
+        if (this.animState == AnimStates.die) {
+            if (frame >= DIE_FRAMES.length) {
+                die();
+                frame--;
+            }
+            this.img.setImage(DIE_FRAMES[frame]);
         }
 
-        this.x -= walkSpeed;
+        if (this.hp <= 0 || this.x < 850) {
+            startDying();
+        }
+
+        if (animState == AnimStates.walk) {
+            this.x -= walkSpeed;
+        }
         this.img.setX(x - 0.5 * img.getImage().getWidth() * 0.4);
         this.img.setY(y - img.getImage().getHeight() * 0.4 * 1.5);
     }
@@ -79,9 +100,13 @@ public class Zombie extends GameObject {
         this.hp = hp;
     }
 
+    public void startDying() {
+        this.animState = AnimStates.die;
+        this.frame = 0;
+    }
     public void die() {
-        // Play death animation or sm
-        Main.gameObjects.remove(this);
-        Main.zombies.remove(this);
+        this.animState = AnimStates.stopped;
+        //Main.gameObjects.remove(this);
+        //Main.zombies.remove(this);
     }
 }

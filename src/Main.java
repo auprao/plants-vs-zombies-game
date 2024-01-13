@@ -47,7 +47,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        AnchorPane root = new AnchorPane();
         Image bg = new Image("file:Frontyard.png");
         String path = "Plants vs Zombies Soundtrack. [Main Menu].mp3";
         Media bgMusic = new Media(new File(path).toURI().toString());
@@ -65,13 +64,6 @@ public class Main extends Application {
 
         background.setImage(bg);
         root.getChildren().add(background);
-
-        addZombieOnTrack(0);
-        addZombieOnTrack(1);
-        addZombieOnTrack(2);
-        addZombieOnTrack(3);
-        addZombieOnTrack(4);
-
 
         Button row1Button = new Button("\u200E \u200E \u200E \u200E ");
         Button row2Button = new Button("\u200E \u200E \u200E \u200E ");
@@ -93,10 +85,7 @@ public class Main extends Application {
         row5Button.setLayoutY(550);
 
 
-
         root.getChildren().addAll(row1Button, row2Button, row3Button,row4Button, row5Button);
-
-
 
 
 

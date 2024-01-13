@@ -19,8 +19,8 @@ public class Plant {
         if (type == Type.Walnut){
             hp = 200;
         }
-        img.setFitWidth(200);
-        img.setFitHeight(200);
+        img.setFitWidth(80);
+        img.setFitHeight(80);
         switch (type){
             case Mine:
                 this.img.setImage(new Image("file:mime.png"));
